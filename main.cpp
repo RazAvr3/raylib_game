@@ -10,7 +10,7 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "Raylib - Basic Window Example!!!!!!!!!!!!!!!!!!!!!!");
+    InitWindow(screenWidth, screenHeight, "Raylib - Basic Window Example");
 
     SetTargetFPS(60); // Set the game to run at 60 frames per second
 
