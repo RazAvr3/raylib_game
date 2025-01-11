@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     cmake \
     clang \
     clang-tidy \
-    clang-foramt
+    clang-format
 
 COPY . /workspace
 
