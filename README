@@ -1,28 +1,16 @@
-docker run -it --rm \
-    -e DISPLAY=$DISPLAY \
-    -v $PWD:/workspace \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    ubuntu-build-env:latest
-
-
-docker build -t ubuntu-build-env .
-
-cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ ..
-
-
-cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ..
-
+specify compiler only in the first build.
+if want to switch compiler, delete the cmake cache.
 
 
 TODO:
-git
-build script with options
+compiler - delete cmake cache when switching compilers
+           flags - try to add flags in seperate cmake file (flags.cmake)
 clang-tidy
 clang-format
-compiler - flags, optiomizations, debug version
 CI/CD
 
 start writing some code ....
+unit tests
 
 later stage:
 package manager
