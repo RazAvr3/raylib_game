@@ -7,7 +7,10 @@ option(USE_CLANG "Use Clang as the compiler" OFF)
 option(USE_GCC "Use GCC as the compiler" OFF)
 option(DEBUG_BUILD "Enable debug build" OFF)
 
-# compiler 
+# flags
+set(DEFAULT_CXX_FLAGS "-Wall -Wextra -Werror")
+
+# compiler type
 if (USE_CLANG AND USE_GCC)
     message(FATAL_ERROR "Cannot specify both USE_CLANG and USE_GCC.")
 elseif (USE_CLANG)
@@ -20,7 +23,7 @@ elseif (USE_GCC)
     message(STATUS "Using GCC compiler")
 endif()
 
-# mode
+# release/debug mode
 if (DEBUG_BUILD)
     set(CMAKE_BUILD_TYPE Debug)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g3 -ggdb")
@@ -32,6 +35,9 @@ else()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
     message(STATUS "Release build")
 endif()
+
+# Add default compiler flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${DEFAULT_CXX_FLAGS}")
 
 project(MyRaylibProject)
 
