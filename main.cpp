@@ -1,33 +1,31 @@
 #include "raylib.h"
-#include <vector>
-#include <ranges>
 #include <iostream>
-
-
+#include <ranges>
+#include <vector>
 
 int main() {
-    // Initialization
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+  // Initialization
+  const int screenWidth = 800;
+  const int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "Raylib - Basic Window Example");
+  InitWindow(screenWidth, screenHeight, "Raylib - Basic Window Example");
 
-    SetTargetFPS(60); // Set the game to run at 60 frames per second
+  SetTargetFPS(60); // Set the game to run at 60 frames per second
 
-    // Main game loop
-    while (!WindowShouldClose()) { // Detect window close button or ESC key
-        // Start drawing
-        BeginDrawing();
+  // Main game loop
+  while (!WindowShouldClose()) { // Detect window close button or ESC key
+    // Start drawing
+    BeginDrawing();
 
-        ClearBackground(RAYWHITE); // Clear the screen with a white background
+    ClearBackground(RAYWHITE); // Clear the screen with a white background
 
-        DrawText("Hello, Raylib!", 190, 200, 20, LIGHTGRAY); // Display text
+    DrawText("Hello, Raylib!", 190, 200, 20, LIGHTGRAY); // Display text
 
-        EndDrawing();
-    }
+    EndDrawing();
+  }
 
-    // De-initialization
-    CloseWindow(); // Close window and unload resources
+  // De-initialization
+  CloseWindow(); // Close window and unload resources
 
-    return 0;
+  return 0;
 }
