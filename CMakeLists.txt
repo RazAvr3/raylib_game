@@ -42,10 +42,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${DEFAULT_CXX_FLAGS}")
 project(MyRaylibProject)
 
 add_subdirectory(raylib)
+add_subdirectory(src)
 
-include_directories(raylib/src)
 
-add_executable(my_program main.cpp)
-
-target_link_libraries(my_program raylib)
 

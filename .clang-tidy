@@ -1,0 +1,35 @@
+Checks: >
+  -*,
+  bugprone-*, 
+  modernize-*, 
+  performance-*, 
+  readability-*, 
+  cppcoreguidelines-*, 
+  misc-*, 
+  clang-analyzer-*, 
+  cert-*
+
+WarningsAsErrors: '*'
+
+CheckOptions:
+  # modernize checks
+  - key: modernize-use-auto.MinTypeNameLength
+    value: 5
+  - key: modernize-use-nullptr.NullMacros
+    value: NULL
+
+  # readability checks
+  - key: readability-identifier-naming.VariableCase
+    value: lower_case
+  - key: readability-identifier-naming.FunctionCase
+    value: camelBack
+
+  # performance checks
+  - key: performance-unnecessary-value-param.IncludeStyle
+    value: llvm
+
+  # cppcoreguidelines
+  - key: cppcoreguidelines-pro-type-const-cast.AllowConstCast
+    value: false
+  - key: cppcoreguidelines-pro-bounds-array-to-pointer-decay.StrictMode
+    value: true
